@@ -14,16 +14,22 @@ class Fsv < Formula
 
     (buildpath/"fsv").write <<~EOS
       #!/bin/bash
-     exec "#{libexec}/bin/python" "#{libexec}/../main.py" "$@"
+      exec "#{libexec}/bin/python" "#{libexec}/../main.py" "$@"
     EOS
 
     chmod 0755, buildpath/"fsv"
     bin.install buildpath/"fsv"
-    chmod "+x #{bin}/fsv"
     libexec.install "main.py"
   end
 
   test do
     system "#{bin}/fsv", "-pg"
+  end
+
+  def caveats
+    <<~EOS
+      You should add the following to your shell configuration file:
+        export FSV_HOME="#{libexec}"
+    EOS
   end
 end
