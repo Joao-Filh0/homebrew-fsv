@@ -19,7 +19,7 @@ class Fsv < Formula
 
     chmod 0755, buildpath/"fsv"
     bin.install buildpath/"fsv"
-    chmod +x #{bin}/fsv
+    chmod "+x #{bin}/fsv"
     libexec.install "main.py"
   end
 
