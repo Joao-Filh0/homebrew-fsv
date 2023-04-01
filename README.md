@@ -1,1 +1,1 @@
-# fsv
+`shasum -a 256 fsv-0.0.7.tar.gz`
