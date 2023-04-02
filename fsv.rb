@@ -6,11 +6,13 @@ class Fsv < Formula
   version "1.0.15"
   head "https://github.com/Joao-Filh0/fsv.git", branch: "main"
 
-  depends_on "python@3"
+  depends_on "python@3.10"
 
   def install
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install_and_link buildpath
+    venv.pip_install "requests", "urllib3", "chardet", "idna"
+
 
     (buildpath/"fsv").write <<~EOS
       #!/bin/bash
