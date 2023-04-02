@@ -15,6 +15,7 @@ class Fsv < Formula
     venv.pip_install "urllib3"
     venv.pip_install "chardet"
     venv.pip_install "idna"
+    venv.pip_install "certifi"
 
 
     (buildpath/"fsv").write <<~EOS
