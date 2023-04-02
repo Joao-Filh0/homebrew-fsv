@@ -13,6 +13,7 @@ class Fsv < Formula
     venv.pip_install_and_link buildpath
     venv.pip_install "requests"
     venv.pip_install "urllib3"
+    venv.pip_install "chardet"
 
     (buildpath/"fsv").write <<~EOS
       #!/bin/bash
