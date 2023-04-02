@@ -11,11 +11,7 @@ class Fsv < Formula
   def install
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install_and_link buildpath
-    venv.pip_install "requests"
-    venv.pip_install "urllib3"
-    venv.pip_install "chardet"
-    venv.pip_install "idna"
-    venv.pip_install "certifi"
+    venv.pip_install ["requests","argparse","urllib3","chardet","idna","certifi"]
 
 
     (buildpath/"fsv").write <<~EOS
