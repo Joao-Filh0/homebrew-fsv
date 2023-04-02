@@ -6,7 +6,7 @@ class Fsv < Formula
   version "1.0.15"
   head "https://github.com/Joao-Filh0/fsv.git", branch: "main"
 
-  depends_on "python@3.10"
+  depends_on "python@3"
 
   def install
     venv = virtualenv_create(libexec, "python3")
