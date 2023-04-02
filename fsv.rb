@@ -14,7 +14,7 @@ class Fsv < Formula
 
     (buildpath/"fsv").write <<~EOS
       #!/bin/bash
-      exec "#{libexec}/bin/python3.10" "#{libexec}/main.py" "$@"
+      exec "#{libexec}/bin/python3" "#{libexec}/main.py" "$@"
     EOS
 
     chmod 0755, buildpath/"fsv"
