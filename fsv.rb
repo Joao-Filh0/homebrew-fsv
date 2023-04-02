@@ -1,9 +1,9 @@
 class Fsv < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/Joao-Filh0/fsv/archive/refs/tags/0.0.14.tar.gz"
-  sha256 "228863ff1a5622e8529bb6412c24219db441820e442884272312636e4a900bfb"
-  version "1.0.14"
+  url "https://github.com/Joao-Filh0/fsv/archive/refs/tags/0.0.15.tar.gz"
+  sha256 "104153c3bb83f7e9a6feb9f95a055109fcb95a071794a55bebefefbf6acbe9dd"
+  version "1.0.15"
   head "https://github.com/Joao-Filh0/fsv.git", branch: "main"
 
   depends_on "python@3.10"
@@ -11,6 +11,7 @@ class Fsv < Formula
   def install
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install_and_link buildpath
+    venv.pip_install "requests"
 
     (buildpath/"fsv").write <<~EOS
       #!/bin/bash
@@ -29,7 +30,6 @@ class Fsv < Formula
 
   def caveats
     <<~EOS
-      You should add the following to your shell configuration file:
         export FSV_HOME="#{libexec}"
     EOS
   end
