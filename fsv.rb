@@ -1,8 +1,8 @@
 class Fsv < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/Joao-Filh0/fsv/archive/refs/tags/0.0.28.tar.gz"
-  sha256 "10cf2df64fbf04e5a7d9068adcc5a2939d51db27b4fffad479b21c03bfb9bef9"
+  url "https://github.com/Joao-Filh0/fsv/archive/refs/tags/0.0.29.tar.gz"
+  sha256 "e0d5d92a3d75ddf8005410dc40eed83ebdeba16d76f7ff571ff5157aea8dae47"
   version "1.0.28"
   head "https://github.com/Joao-Filh0/fsv.git", branch: "main"
 
